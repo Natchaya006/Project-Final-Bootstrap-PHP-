@@ -29,7 +29,7 @@
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-3">
                   <ul class="nav navbar-nav navbar-right" style="margin-top:15px;">
-                    <marquee><font size = "3" color="white">ติดต่อโฆษณาได้ที่ 080-000-0000 หรือ EMAIL : testsystem@testsystem.com</marquee>
+                    <marquee><font size = "3" color="white">ติดต่อโฆษณาได้ที่ 080-000-0000 หรือ Email : testsystem@testsystem.com</marquee>
                   </ul>
                 </div>
             </div>

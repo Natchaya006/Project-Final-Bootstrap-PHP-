@@ -30,7 +30,7 @@
               </a>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="margin-top:15px;">
-              <marquee><font size = "3" color="white">ติดต่อโฆษณาได้ที่ 080-000-0000 หรือ EMAIL : testsystem@testsystem.com</marquee>
+              <marquee><font size = "3" color="white">ติดต่อโฆษณาได้ที่ 080-000-0000 หรือ Email : testsystem@testsystem.com</marquee>
             </div>
           </div>
         </div>
@@ -40,13 +40,20 @@
             <ul class="nav" id="main-menu">
               <li>
                 <?php
-                session_start();
-                $connect = mysqli_connect("localhost","id1494919_admin","02806","id1494919_movie");
-                $sql = 'select * from user where User_ID = "'.$_SESSION["id"].'"';
-                $result = mysqli_query($connect,$sql);
-                $row = mysqli_fetch_assoc($result);
-                echo '<center><b>Hello </b>'.$row['FName'].'</center>';
-                 ?>
+                  session_start();
+                  if($_SESSION['id']=='')
+                  {
+                    header("location:index.php");
+                  }
+                  else
+                  {
+                    $connect = mysqli_connect("localhost","id1494919_admin","02806","id1494919_movie");
+                    $sql = 'select * from user where User_ID = "'.$_SESSION["id"].'"';
+                    $result = mysqli_query($connect,$sql);
+                    $row = mysqli_fetch_assoc($result);
+                    echo '<center><b>Hello </b>'.$row['FName'].'</center>';
+                  }
+               ?>
               </li>
               <li>
                 <a href="HomeCompeleteLogin.php" ><i class="glyphicon glyphicon-home"></i>Home</a>
@@ -79,49 +86,49 @@
     </div>
     <div class="">
       <?php
-      $id = $_SESSION['id'];
-      $connect = mysqli_connect("localhost","id1494919_admin","02806","id1494919_movie");
-      $sql = 'select * from user where User_ID = '.$id.'';
-      $result = mysqli_query($connect,$sql);
-      $row = mysqli_fetch_assoc($result) ;
-      echo '<form name = "frmupdate" action= "EditComplete.php" method = "post">';
-      echo '<div class = "col-lg-offset-4 col-xs-offset-1 col-md-offset-5 col-sm-offset-5">';
-      echo '<br><br><h2><b>Edit Profile</b></h2><br>';
-        echo '<table border = "1">';
-          echo '<tr>';
-            echo '<td align = "center"><b>&nbsp;&nbsp;User_ID&nbsp;&nbsp;</b></td>';
-            echo '<td><input type="text" value="'.$row['User_ID'].'" disabled = "false"><input type="hidden" name = "id" value = "'.$row['User_ID'].'"></td>';
-          echo '</tr>';
-          echo '<tr>';
-            echo '<td align = "center"><b>&nbsp;&nbsp;Firstname&nbsp;&nbsp;</b></td>';
-            echo '<td><input type="text" name="fname" value="'.$row['FName'].'"></td>';
-          echo '</tr>';
-          echo '<tr>';
-            echo '<td align = "center"><b>&nbsp;&nbsp;Lastname&nbsp;&nbsp;</b></td>';
-            echo '<td><input type="text" name="lname" value="'.$row['LName'].'"></td>';
-          echo '</tr>';
-          echo '<tr>';
-            echo '<td align = "center"><b>&nbsp;&nbsp;Email&nbsp;&nbsp;</b></td>';
-            echo '<td><input type="text" name="email" value="'.$row['Email'].'"></td>';
-          echo '</tr>';
-          echo '<tr>';
-            echo '<td align = "center"><b>&nbsp;&nbsp;Password&nbsp;&nbsp;</b></td>';
-            echo '<td><input type="text" name="pass" value="'.$row['Pass'].'"></td>';
-          echo '</tr>';
-          echo '<tr>';
-            echo '<td align = "center"><b>&nbsp;&nbsp;Address1&nbsp;&nbsp;</b></td>';
-            echo '<td><input type="text" name="add1" value="'.$row['Address1'].'"></td>';
-          echo '</tr>';
-          echo '<tr>';
-            echo '<td align = "center"><b>&nbsp;&nbsp;Address2&nbsp;&nbsp;</b></td>';
-            echo '<td><input type="text" name="add2" value="'.$row['Address2'].'"></td>';
-          echo '</tr>';
-        echo '</table>';
-      echo '<br><input type = "submit" value = "Update" class="btn btn-primary">';
-      echo '</div>';
+        $id = $_SESSION['id'];
+        $connect = mysqli_connect("localhost","id1494919_admin","02806","id1494919_movie");
+        $sql = 'select * from user where User_ID = '.$id.'';
+        $result = mysqli_query($connect,$sql);
+        $row = mysqli_fetch_assoc($result) ;
+        echo '<form name = "frmupdate" action= "EditComplete.php" method = "post">';
+        echo '<div class = "col-lg-offset-4 col-xs-offset-1 col-md-offset-5 col-sm-offset-5">';
+        echo '<br><br><h2><b>Edit Profile</b></h2><br>';
+          echo '<table border = "1">';
+            echo '<tr>';
+              echo '<td align = "center"><b>&nbsp;&nbsp;User_ID&nbsp;&nbsp;</b></td>';
+              echo '<td><input type="text" value="'.$row['User_ID'].'" disabled = "false"><input type="hidden" name = "id" value = "'.$row['User_ID'].'"></td>';
+            echo '</tr>';
+            echo '<tr>';
+              echo '<td align = "center"><b>&nbsp;&nbsp;Firstname&nbsp;&nbsp;</b></td>';
+              echo '<td><input type="text" name="fname" value="'.$row['FName'].'"></td>';
+            echo '</tr>';
+            echo '<tr>';
+              echo '<td align = "center"><b>&nbsp;&nbsp;Lastname&nbsp;&nbsp;</b></td>';
+              echo '<td><input type="text" name="lname" value="'.$row['LName'].'"></td>';
+            echo '</tr>';
+            echo '<tr>';
+              echo '<td align = "center"><b>&nbsp;&nbsp;Email&nbsp;&nbsp;</b></td>';
+              echo '<td><input type="text" name="email" value="'.$row['Email'].'"></td>';
+            echo '</tr>';
+            echo '<tr>';
+              echo '<td align = "center"><b>&nbsp;&nbsp;Password&nbsp;&nbsp;</b></td>';
+              echo '<td><input type="text" name="pass" value="'.$row['Pass'].'"></td>';
+            echo '</tr>';
+            echo '<tr>';
+              echo '<td align = "center"><b>&nbsp;&nbsp;Address1&nbsp;&nbsp;</b></td>';
+              echo '<td><input type="text" name="add1" value="'.$row['Address1'].'"></td>';
+            echo '</tr>';
+            echo '<tr>';
+              echo '<td align = "center"><b>&nbsp;&nbsp;Address2&nbsp;&nbsp;</b></td>';
+              echo '<td><input type="text" name="add2" value="'.$row['Address2'].'"></td>';
+            echo '</tr>';
+          echo '</table>';
+          echo '<br><input type = "submit" value = "Update" class="btn btn-primary">';
+        echo '</div>';
       echo '</form>';
       mysqli_close($connect);
-       ?>
+    ?>
     </div>
     <script src="assets/js/jquery-1.10.2.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>

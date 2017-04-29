@@ -1,4 +1,3 @@
-  <!DOCTYPE html>
   <html lang="en">
     <head>
       <meta charset="utf-8">
@@ -6,7 +5,6 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Login</title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="index.css">
     </head>
     <body>
@@ -31,7 +29,7 @@
                   </div>
                   <div class="col-lg-4 col-md-4 col-sm-3 col-xs-3">
                     <ul class="nav navbar-nav navbar-right" style="margin-top:15px;">
-                      <marquee><font size = "3" color="white">ติดต่อโฆษณาได้ที่ 080-000-0000 หรือ EMAIL : testsystem@testsystem.com</marquee>
+                      <marquee><font size = "3" color="white">ติดต่อโฆษณาได้ที่ 080-000-0000 หรือ Email : testsystem@testsystem.com</marquee>
                     </ul>
                   </div>
               </div>
@@ -40,14 +38,14 @@
       <div class="col-sm-offset-1 col-sm-4">
         <form class="frmlogin" action="login.php" method="post">
           <br><br>UserID  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;<input type="text" name="id"><br><br>
-          Password &nbsp;&nbsp;:&nbsp;&nbsp;<input type="text" name="pass"><br><br>
+          Password &nbsp;&nbsp;:&nbsp;&nbsp;<input type="password" name="pass"><br><br>
         <input type="submit" value="Login" class="btn btn-primary">
         </form>
         <form class="frmreister" action="register.php" method="post">
           <br><br>Firstname &nbsp;:&nbsp;&nbsp;<input type="text" name="fname"><br><br>
           Lastname &nbsp;:&nbsp;&nbsp;<input type="text" name="lname"><br><br>
           E-mail &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;<input type="text" name="email" placeholder="&nbsp;&nbsp;xxx@email.com"><br><br>
-          Password &nbsp;:&nbsp;&nbsp;<input type="text" name="pass" placeholder="&nbsp;&nbsp;only number [0-9]"><br><br>
+          Password &nbsp;:&nbsp;&nbsp;<input type="password" name="pass" placeholder="&nbsp;&nbsp;only number [0-9]"><br><br>
           Address1 &nbsp;&nbsp;:&nbsp;&nbsp;<input type="text" name="address1" size="30"><br><br>
           Address2 &nbsp;&nbsp;:&nbsp;&nbsp;<input type="text" name="address2" size="30"><br><br>
         <input type="submit" value="Register" class="btn btn-success">

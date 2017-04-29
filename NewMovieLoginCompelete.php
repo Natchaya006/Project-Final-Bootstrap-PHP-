@@ -29,7 +29,7 @@
               </a>
             </div>
             <div class="col-lg-8 col-md-8 col-sm-8" style="margin-top:15px;">
-              <marquee><font size = "3" color="white">ติดต่อโฆษณาได้ที่ 080-000-0000 หรือ EMAIL : testsystem@testsystem.com</marquee>
+              <marquee><font size = "3" color="white">ติดต่อโฆษณาได้ที่ 080-000-0000 หรือ Email : testsystem@testsystem.com</marquee>
             </div>
           </div>
         </div>
@@ -40,11 +40,18 @@
               <li>
                 <?php
                 session_start();
-                $connect = mysqli_connect("localhost","id1494919_admin","02806","id1494919_movie");
-                $sql = 'select * from user where User_ID = "'.$_SESSION["id"].'"';
-                $result = mysqli_query($connect,$sql);
-                $row = mysqli_fetch_assoc($result);
-                echo '<center><b>Hello </b>'.$row['FName'].'</center>';
+                if($_SESSION['id']=='')
+                {
+                  header("location:index.php");
+                }
+                else
+                {
+                  $connect = mysqli_connect("localhost","id1494919_admin","02806","id1494919_movie");
+                  $sql = 'select * from user where User_ID = "'.$_SESSION["id"].'"';
+                  $result = mysqli_query($connect,$sql);
+                  $row = mysqli_fetch_assoc($result);
+                  echo '<center><b>Hello </b>'.$row['FName'].'</center>';
+                }
                  ?>
               </li>
               <li>

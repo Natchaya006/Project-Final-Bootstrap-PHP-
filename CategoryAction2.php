@@ -29,7 +29,7 @@
               </a>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="margin-top:15px;">
-              <marquee><font size = "3" color="white">ติดต่อโฆษณาได้ที่ 080-000-0000 หรือ EMAIL : testsystem@testsystem.com</marquee>
+              <marquee><font size = "3" color="white">ติดต่อโฆษณาได้ที่ 080-000-0000 หรือ Email : testsystem@testsystem.com</marquee>
             </div>
           </div>
         </div>
@@ -39,13 +39,20 @@
           <ul class="nav" id="main-menu">
             <li>
               <?php
-              session_start();
-              $connect = mysqli_connect("localhost","id1494919_admin","02806","id1494919_movie");
-              $sql = 'select * from user where User_ID = "'.$_SESSION["id"].'"';
-              $result = mysqli_query($connect,$sql);
-              $row = mysqli_fetch_assoc($result);
-              echo '<center><b>Hello </b>'.$row['FName'].'</center>';
-               ?>
+                session_start();
+                if($_SESSION['id']=='')
+                {
+                  header("location:index.php");
+                }
+                else
+                {
+                  $connect = mysqli_connect("localhost","id1494919_admin","02806","id1494919_movie");
+                  $sql = 'select * from user where User_ID = "'.$_SESSION["id"].'"';
+                  $result = mysqli_query($connect,$sql);
+                  $row = mysqli_fetch_assoc($result);
+                  echo '<center><b>Hello </b>'.$row['FName'].'</center>';
+                }
+              ?>
             </li>
             <li>
               <a href="HomeCompeleteLogin.php" ><i class="glyphicon glyphicon-home"></i>Home</a>
@@ -94,10 +101,10 @@
         <a href="https://www.youtube.com/watch?v=5TkgrYXgQYs">Trailer</a><br><br>
         <form action="BuyMovie.php" method="post">
           <?php
-          $id = $_SESSION["id"];
-          echo '<input type="hidden" name = "mid" value = "1">';
-          echo '<input type="hidden" name = "id" value = "'.$id.'">';
-          echo '<input type="submit" value="BUY" class="btn btn-success">';
+            $id = $_SESSION["id"];
+            echo '<input type="hidden" name = "mid" value = "1">';
+            echo '<input type="hidden" name = "id" value = "'.$id.'">';
+            echo '<input type="submit" value="BUY" class="btn btn-success">';
           ?>
         </form>
       </div>
@@ -114,10 +121,10 @@
         <a href="https://www.youtube.com/watch?v=8CSyzEP3ykU">Trailer</a><br><br>
         <form action="BuyMovie.php" method="post">
           <?php
-          $id = $_SESSION["id"];
-          echo '<input type="hidden" name = "mid" value = "7">';
-          echo '<input type="hidden" name = "id" value = "'.$id.'">';
-          echo '<input type="submit" value="BUY" class="btn btn-success">';
+            $id = $_SESSION["id"];
+            echo '<input type="hidden" name = "mid" value = "7">';
+            echo '<input type="hidden" name = "id" value = "'.$id.'">';
+            echo '<input type="submit" value="BUY" class="btn btn-success">';
           ?>
         </form>
       </div>
