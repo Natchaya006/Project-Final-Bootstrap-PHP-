@@ -111,7 +111,7 @@
             }
         }
         if ($row['Status'] == 'success') {
-          $total += $row['OPrice'];
+
         }else {
         echo '<td align = "center" bgcolor = "white">
         <form action="Pay.php" method="post">
@@ -125,7 +125,9 @@
         <input type="hidden" name = "mid" value = "'.$row['OID'].'">
         <input type="submit" value="Cancel" class="btn btn-danger" onClick = "return confirmCancel();">
         </form>
-        </td>'."\n";}
+        </td>'."\n";
+        $total += $row['OPrice'];
+      }
       echo '</tr>';
     }
     echo '</table><br>';
