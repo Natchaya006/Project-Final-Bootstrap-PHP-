@@ -38,6 +38,7 @@ echo '<tr>';
 echo '<td width = "50" align = "center"><b>No.</b></td>';
 echo '<td width = "300" align = "center"><b>Movie Name</td>';
 echo '<td width = "100" align = "center"><b>Category</b></td>';
+echo '<td width = "60" align = "center"><b>Quantity</b></td>';
 echo '<td width = "80" align = "center"><b>Price</b></td>';
 echo '</tr>';
 $num = 1;
@@ -49,10 +50,10 @@ while($row = mysqli_fetch_array($result))
   for ($i = 0; $i < $numfields ; $i++)
   {
     if($i != 0){
-      if($i==3){
+      if($i==4){
         echo '<td align = "right">'.$row[$i].'</td>'."\n";
       }
-      else if($i == 2){
+      else if($i == 2 || $i == 3){
         echo '<td align = "center">'.$row[$i].'</td>'."\n";
       }
       else{

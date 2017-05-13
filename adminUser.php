@@ -90,6 +90,14 @@
       echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type = "submit" value = "Request" class = "btn btn-info">';
       echo '<br><br>';
       echo '</form>';
+      echo '<form action="searchUser.php" method="post" target="iframe_target">';
+      echo '<b>Search : </b>&nbsp;&nbsp;<select name = "title">';
+      echo '<option value = "id">UserID</option>';
+      echo '<option value = "name">Name</option>';
+      echo '</select>';
+      echo '&nbsp;&nbsp;<input type="text" name="search">&nbsp;&nbsp;';
+      echo '<input type="submit" value="Search" class="btn btn-primary">';
+      echo '</form>';
       echo '</div>';
       mysqli_close($connect);
     }

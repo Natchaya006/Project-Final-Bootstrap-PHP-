@@ -87,7 +87,7 @@
     <div class="">
       <?php
         $id = $_SESSION['id'];
-        $connect = mysqli_connect("localhost","root","","movie");
+        $connect = mysqli_connect("localhost","id1494919_admin","admin","id1494919_movie_shop");
         $sql = 'select * from user where User_ID = '.$id.'';
         $result = mysqli_query($connect,$sql);
         $row = mysqli_fetch_assoc($result) ;
@@ -113,7 +113,7 @@
             echo '</tr>';
             echo '<tr>';
               echo '<td align = "center"><b>&nbsp;&nbsp;Password&nbsp;&nbsp;</b></td>';
-              echo '<td><input type="text" name="pass" value="'.$row['Pass'].'"></td>';
+              echo '<td><input type="password" name="pass" value="'.$row['Pass'].'"></td>';
             echo '</tr>';
             echo '<tr>';
               echo '<td align = "center"><b>&nbsp;&nbsp;Address1&nbsp;&nbsp;</b></td>';
