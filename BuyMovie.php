@@ -1,4 +1,4 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -109,6 +109,10 @@
         echo '<tr>';
           echo '<td>&nbsp;&nbsp;&nbsp;Price&nbsp;&nbsp;&nbsp;</td>';
           echo '<td><input type="text" name="sd" value="'.$row['MPrice'].'" disabled = "false"></td>';
+        echo '</tr>';
+      echo '<tr>';
+          echo '<td>&nbsp;&nbsp;&nbsp;Remaining&nbsp;&nbsp;&nbsp;</td>';
+          echo '<td><input type="text" name="quantity" value="'.$row['MQuantity'].'" disabled = "false"></td>';
         echo '</tr>';
         echo '<tr>';
           echo '<td>&nbsp;&nbsp;&nbsp;Quantity&nbsp;&nbsp;&nbsp;</td>';
